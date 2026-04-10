@@ -54,5 +54,6 @@ Route::middleware('auth')->group(function () {
     // Owner Routes
     Route::middleware('role:owner')->group(function () {
         Route::get('/rekap', [RekapController::class, 'index'])->name('rekap.index');
+        Route::get('/rekap/export-csv', [RekapController::class, 'exportCsv'])->name('rekap.export-csv');
     });
 });
